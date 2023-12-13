@@ -1,15 +1,16 @@
-{% extends 'main.html' %}
-
-{% block content %}
+{% extends 'main.html' %} {% block content %}
 
 <body>
-    <h1>This is the home page</h1>
-    {%for task in tasks %}
-    <div>
-        <h5>{{task.task_type_1}} | {{task.task_type_2}} | {{task.status}} | {{task.description}} | {{task.date_created}}
-            | {{task.date_completed}} </h5>
-    </div>
-    {% endfor %}
+  <h1>This is the home page</h1>
+  <a href="{% url 'create-task' %}">Create Task</a>
+  {%for task in tasks %}
+  <div>
+    <h5>
+      {{task.task_type_1}} | {{task.task_type_2}} | {{task.status}} |
+      {{task.description}} | {{task.date_created}} | {{task.date_completed}}
+    </h5>
+  </div>
+  {% endfor %}
 </body>
 
 {% endblock content %}
