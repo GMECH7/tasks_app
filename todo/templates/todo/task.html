@@ -5,6 +5,11 @@
   <a href="{% url 'create-task' %}">Create Task</a>
   {%for task in tasks %}
   <div>
+    <!-- {% if request.user == task.host %} -->
+
+    <a href="{% url 'update-task' task.id %}">Edit</a>
+    <a href="{% url 'delete-task' task.id %}">Delete</a>
+    <!-- {% endif %} -->
     <h5>
       {{task.task_type_1}} | {{task.task_type_2}} | {{task.status}} |
       {{task.description}} | {{task.date_created}} | {{task.date_completed}}
